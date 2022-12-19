@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	* {
+		@apply m-0 p-0 box-border;
+	}
+
+	html {
+		@apply overflow-x-hidden antialiased text-[16px];
+	}
+
+	#root {
+		@apply min-h-screen mx-auto bg-[url("./assets/images/body-bg.png.webp")] bg-no-repeat bg-cover font-light;
+	}
+
+	::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		@apply bg-main h-[50%];
+	}
+
+	::-webkit-scrollbar-track {
+		@apply bg-transparent;
+	}
+}
+
+@layer utilities {
+	#root {
+		font-family: "mulish", sans-serif;
+		letter-spacing: 0.004rem;
+	}
+}
+
+@layer components {
+	.web-container {
+		max-width: 1440px;
+		padding: 0 1rem;
+		margin: 0 auto;
+		scroll-behavior: smooth;
+	}
+
+	.mobile-menu-bg {
+		background: rgba(255, 255, 255, 0.25);
+		box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+		border-radius: 10px;
+		border: 1px solid rgba(255, 255, 255, 0.18);
+	}
+
+	.btn {
+		@apply px-4 sm:px-7 inline-block py-2 uppercase shadow-lg shadow-main/20 rounded-sm transition-all duration-300;
+	}
+
+	.btn-primary {
+		@apply bg-main text-gray-300 hover:bg-transparent hover:text-gray-700;
+	}
+
+	.btn-secondary {
+		@apply bg-transparent text-gray-700 hover:bg-main hover:text-gray-300;
+	}
+
+	@keyframes menu-animate {
+		0% {
+			width: 0;
+		}
+
+		100% {
+			width: 60%;
+		}
+	}
+
+	.menu {
+		animation: menu-animate 400ms ease-in-out;
+		height: calc(100vh - 80px);
+	}
+
+	.menu-hover::after {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		height: 2px;
+		width: 0;
+		background-color: rgb(102, 60, 255);
+		transition: all 0.3ms linear;
+	}
+
+	.menu-hover:hover::after {
+		width: 60%;
+		animation: menu-animate 400ms linear;
+	}
+
+	.menu-active::after {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		height: 2px;
+		width: 80%;
+		background-color: rgb(102, 60, 255);
+		transition: all 0.3ms linear;
+	}
+
+	@keyframes image-animation {
+		0% {
+			transform: translateY(-16);
+			scale: 107%;
+		}
+
+		100% {
+			transform: translateY(20px);
+			scale: 100%;
+		}
+	}
+
+	.image-animation {
+		animation: image-animation 1.7s linear alternate-reverse infinite;
+	}
+}
