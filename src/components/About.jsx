@@ -1,7 +1,7 @@
 import React from "react";
 import aboutImage from "../assets/images/about-us.webp";
 import { motion } from "framer-motion";
-import resume from "../assets/resume/resume.pdf";
+import resume from "../assets/resume/RESUME.pdf";
 
 const About = () => {
 	return (
@@ -32,7 +32,7 @@ const About = () => {
 					</p>
 					<p className="my-3">
 						<span className="font-semibold">Skills</span> - React.js (
-						Redux-Toolkit , Axios ) , Node.js ( socket.io , Mongoose ,
+						Redux-Toolkit , Axios , React-Router-DOM ) , Node.js ( socket.io , Mongoose ,
 						jsonWebToken ) , MongoDb ( aggregation framework ), Express.js ,
 						Tailwind css , Javascript (ES6) , HTML5 , CSS3 <br />
 						<p className="my-3">
