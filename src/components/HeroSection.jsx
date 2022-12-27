@@ -2,7 +2,7 @@ import React from "react";
 import heroImage from "../assets/images/home-right.webp";
 import heroBg from "../assets/images/home-banner.png";
 import { motion } from "framer-motion";
-import resume from "../assets/resume/resume.pdf"
+import resume from "../assets/resume/RESUME.pdf"
 
 const HeroSection = () => {
 	return (
